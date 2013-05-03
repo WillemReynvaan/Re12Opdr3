@@ -4,7 +4,7 @@ Feature: Create Issue
 	So that the issue is tracked
 	Scenario:
 		Given I am logged in
-		And I on the issues page for the WillemReynvaan/RE12Opdr3 project
+		And I am on the issues page for the WillemReynvaan/RE12Opdr3 project
 		And The number of issues is X
 		When I press "New issue"
 		And I fill in "Title" with "Test"
