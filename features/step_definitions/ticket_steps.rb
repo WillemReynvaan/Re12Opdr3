@@ -1,4 +1,4 @@
-require 'capybara/rails'
+#require 'capybara/rails'
 require 'capybara/cucumber'
 require 'capybara/session'
 

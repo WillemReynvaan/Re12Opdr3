@@ -2,6 +2,7 @@ Feature: Create Ticket
 	As an authorized user
 	I want to be able to add tickets to projects
 	So that the issue is tracked
+	@selenium
 	Scenario:
 		Given I am logged in
 		And I am on the tickets page for the 108787-assignment-3 project
