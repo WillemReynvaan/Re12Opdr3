@@ -54,6 +54,7 @@ Then(/^the ticket should be shown with a title "(.*?)"$/) do |content|
 end
 
 Then(/^the number of open tickets should be X\+1$/) do
+  sleep(5)
   getopenticketslink(page).click
   t = getopentickets(page)
   print "Current: #{t} expected: #{@tickets+1}"
