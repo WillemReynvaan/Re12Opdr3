@@ -1,4 +1,3 @@
-#require 'capybara/rails'
 require 'capybara/cucumber'
 require 'capybara/session'
 
@@ -31,8 +30,6 @@ Given(/^I am on the tickets page for the (.*?) project$/) do |project|
 end
 
 Given(/^The number of open tickets is X$/) do
-  #t = page.find('#search-sentence').find('b').text
-  #@tickets = /all (\d+)/.match(t)[1]
   @tickets = getopentickets(page)
   print "Open tickets: #{@tickets}"
 end

@@ -5,7 +5,6 @@ Feature: Create Ticket
 	@selenium
 	Scenario:
 		Given I am logged in
-		#And I am on the tickets page for the 108787-assignment-3 project
 		And The number of open tickets is X
 		When I click "Create new ticket"
 		And I fill in "ticket_title" with "Test"

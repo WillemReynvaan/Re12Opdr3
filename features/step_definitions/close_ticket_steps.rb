@@ -1,4 +1,3 @@
-#require 'capybara/rails'
 require 'capybara/cucumber'
 require 'capybara/session'
 
@@ -20,10 +19,7 @@ def getresolvedtickets(page)
 end
 
 
-
 Given(/^The number of resolved tickets is X$/) do
-  #t = page.find('#search-sentence').find('b').text
-  #@tickets = /all (\d+)/.match(t)[1]
   @tickets = getresolvedtickets(page)
   print "Resolved tickets: #{@tickets}"
 end
@@ -35,9 +31,6 @@ end
 When(/^I change the "(.*?)" to "(.*?)"$/) do |arg1, arg2|
   page.select(arg2, :from => arg1)
 end
-
-
-
 
 Then(/^the number of resolved tickets should be X\+1$/) do
   sleep(5)
