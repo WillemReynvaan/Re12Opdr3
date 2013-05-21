@@ -21,7 +21,7 @@ end
 
 Given(/^The number of resolved tickets is X$/) do
   @tickets = getresolvedtickets(page)
-  print "Resolved tickets: #{@tickets}"
+  print "Resolved tickets: #{@tickets}\n"
 end
 
 When(/^I click on the top ticket$/) do
@@ -33,10 +33,11 @@ When(/^I change the "(.*?)" to "(.*?)"$/) do |arg1, arg2|
 end
 
 Then(/^the number of resolved tickets should be X\+1$/) do
-  sleep(5)
+  print "Waiting for Lighthouse to update ticket counts...\n"
+  sleep(10)
   getresolvedticketslink(page).click
   t = getresolvedtickets(page)
-  print "Current: #{t} expected: #{@tickets+1}"
+  print "Current: #{t} expected: #{@tickets+1}\n"
   assert t == @tickets+1
 end
 

@@ -31,7 +31,7 @@ end
 
 Given(/^The number of open tickets is X$/) do
   @tickets = getopentickets(page)
-  print "Open tickets: #{@tickets}"
+  print "Open tickets: #{@tickets}\n"
 end
 
 When(/^I press "(.*?)"$/) do |button_name|
@@ -51,9 +51,10 @@ Then(/^the ticket should be shown with a title "(.*?)"$/) do |content|
 end
 
 Then(/^the number of open tickets should be X\+1$/) do
-  sleep(5)
+  print "Waiting for Lighthouse to update ticket counts...\n"
+  sleep(10)
   getopenticketslink(page).click
   t = getopentickets(page)
-  print "Current: #{t} expected: #{@tickets+1}"
+  print "Current: #{t} expected: #{@tickets+1}\n"
   assert t == @tickets+1
 end

@@ -4,7 +4,6 @@ Feature: Resolve Ticket
 	@selenium
 	Scenario:
 		Given I am logged in
-		#And I am on the tickets page for the 108787-assignment-3 project
 		And The number of resolved tickets is X
 		When I click "Open tickets"
 		And I click on the top ticket
