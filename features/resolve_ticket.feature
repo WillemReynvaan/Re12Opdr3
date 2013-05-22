@@ -5,7 +5,7 @@ Feature: Resolve Ticket
 	Scenario:
 		Given I am logged in
 		And The number of open tickets is greater than 0
-		When I click "Open tickets" from the tickets list
+		When I click "Open tickets" in the tickets menu
 		And I click on the top ticket
 		And I change the "Ticket state" to "resolved"
 		And I press "Update ticket"

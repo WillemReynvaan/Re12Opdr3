@@ -32,7 +32,7 @@ When(/^I click "(.*?)"$/) do |link_name|
   click_link link_name
 end
 
-When(/^I click "(.*?)" from the tickets list$/) do |link_name|
+When(/^I click "(.*?)" in the tickets menu$/) do |link_name|
   click_list(page, link_name)
 end
 
