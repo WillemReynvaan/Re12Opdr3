@@ -10,7 +10,7 @@ end
 After do
 end
 
-def click_list(page, link_name)
+def click_menu(page, link_name)
   within('#t-menu') do
     first('em').click
     click_link link_name
@@ -33,7 +33,7 @@ When(/^I click "(.*?)"$/) do |link_name|
 end
 
 When(/^I click "(.*?)" in the tickets menu$/) do |link_name|
-  click_list(page, link_name)
+  click_menu(page, link_name)
 end
 
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field_name, value|
@@ -46,6 +46,6 @@ end
 
 Then(/^the ticket should be in the list of open tickets$/) do
   @ticketid = page.first('.ticketnum').text.delete('#')
-  click_list(page, "Open tickets")
+  click_menu(page, "Open tickets")
   assert page.has_selector?("#ticket-#{@ticketid}")
 end

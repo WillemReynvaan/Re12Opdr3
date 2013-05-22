@@ -19,9 +19,9 @@ def getnumberoftickets(page)
   end
 end
 
-Given(/^The number of open tickets is greater than (\d+)$/) do |arg1|
-  click_list(page, "Open tickets")
-  if getnumberoftickets(page) <= arg1.to_i then
+Given(/^The number of "(.*?)" is greater than (\d+)$/) do |query, min|
+  click_menu(page, query)
+  if getnumberoftickets(page) <= min.to_i then
     # Skip test, it should be possible to do it after the create ticket scenario
     print "Please run the 'create_ticket.feature' scenario, then try again.\n"
     pending
@@ -42,7 +42,7 @@ end
 
 Then(/^the ticket should be in the list of closed tickets$/) do
   @ticketid = page.first('.ticketnum').text.delete('#')
-  click_list(page, "Closed tickets")
+  click_menu(page, "Closed tickets")
   assert page.has_selector?("#ticket-#{@ticketid}")
 end
 

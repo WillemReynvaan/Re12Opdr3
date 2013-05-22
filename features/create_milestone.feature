@@ -6,6 +6,7 @@ Feature: Create Milestone
 	@selenium
 	Scenario:
 		Given I am logged in
+		And The number of "All tickets" is greater than 0
 		When I click "Milestones"
 		And I click "New milestone"
 		And I fill in "Milestone title" with "Test milestone"
