@@ -53,3 +53,7 @@ be pending.
 Close milestone: This test checks whether it is possible to close a milestone, even
 if there are open tickets with that milestone. This test only works if there is such
 a milestone with open tickets, otherwise it will be pending.
+
+Restore temporary comment: This test checks whether the comment that was typed for a
+new ticket is restored when the page is reloaded. This simulates a crashed browser.
+The test explicitly waits after typing and reloading to allow saving and restoring.
