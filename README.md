@@ -31,15 +31,25 @@ terminal to run all the scenarios.
 Scenario descriptions
 ---------------------
 
-Create Issue: This test checks whether it is possible to create a new ticket,
+Create ticket: This test checks whether it is possible to create a new ticket,
 which should bring the user to a page that has the title of the ticket on the
-page and it should increase the number of open tickets. This might not happen
-instantly, however.
+page and it should appear on the list of open tickets.
 
-Close ticket: This test checks whether it is possible to change the status of
-an open ticket to resolved. The number of closed tickets should increase by one.
+Resolve ticket: This test checks whether it is possible to change the status of
+an open ticket to resolved. It should receive this state on the ticket page and
+it should appear on the list of closed tickets. This test only works if there are
+open tickets, otherwise it will be pending.
 
 Upload profile picture: This test checks whether a profile picture can be uploaded.
 It uploads a JPG file and a PNG file, and in between checks whether the file name
 has changed to include ".jpg" or ".png". This is the best way to check whether the
 image actually changed.
+
+Create milestone: This test checks whether it is possible to create a new milestone
+and then add that exact milestone to an issue. Both the name and milestone ID are
+validated. This test only works if issues were created before, otherwise it will
+be pending.
+
+Close milestone: This test checks whether it is possible to close a milestone, even
+if there are open tickets with that milestone. This test only works if there is such
+a milestone with open tickets, otherwise it will be pending.
