@@ -11,4 +11,5 @@ Feature: Create Ticket
 		And I fill in "ticket-body" with "This is a test"
 		And I press "Create ticket"
 		Then the ticket should be shown with a title "Test"
+		And the ticket should be in the list of open tickets
 		And the number of open tickets should be X+1

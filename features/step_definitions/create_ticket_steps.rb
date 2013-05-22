@@ -5,6 +5,7 @@ Capybara.default_driver = :selenium
 
 Before do
   @tickets = 0
+  @ticketid = 0
 end
 
 After do
@@ -47,7 +48,13 @@ When(/^I fill in "(.*?)" with "(.*?)"$/) do |field_name, value|
 end
 
 Then(/^the ticket should be shown with a title "(.*?)"$/) do |content|
-  assert page.has_content?(content)
+  assert page.title.include?(content)
+end
+
+Then(/^the ticket should be in the list of open tickets$/) do
+  @ticketid = page.first('.ticketnum').text.delete('#')
+  getopenticketslink(page).click
+  assert page.has_selector?("#ticket-#{@ticketid}")
 end
 
 Then(/^the number of open tickets should be X\+1$/) do
