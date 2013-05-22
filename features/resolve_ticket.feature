@@ -4,9 +4,10 @@ Feature: Resolve Ticket
 	@selenium
 	Scenario:
 		Given I am logged in
-		And The number of resolved tickets is X
-		When I click "Open tickets"
+		And The number of open tickets is greater than 0
+		When I click "Open tickets" from the tickets list
 		And I click on the top ticket
 		And I change the "Ticket state" to "resolved"
 		And I press "Update ticket"
-		Then the number of resolved tickets should be X+1
+		Then the state of the ticket should be "resolved"
+		And the ticket should be in the list of closed tickets

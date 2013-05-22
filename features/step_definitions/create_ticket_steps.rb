@@ -4,19 +4,17 @@ require 'capybara/session'
 Capybara.default_driver = :selenium
 
 Before do
-  @tickets = 0
   @ticketid = 0
 end
 
 After do
 end
 
-def getopenticketslink(page)
-  return page.find('#shared-ticket-bins').find('a[title="Query: state:open"]')
-end
-
-def getopentickets(page)
-  return getopenticketslink(page).find('.badge').text.delete(',').to_i
+def click_list(page, link_name)
+  within('#t-menu') do
+    first('em').click
+    click_link link_name
+  end
 end
 
 Given(/^I am logged in$/) do
@@ -26,21 +24,16 @@ Given(/^I am logged in$/) do
   click_button "Sign In"
 end
 
-Given(/^I am on the tickets page for the (.*?) project$/) do |project|
-  visit("http://re12.lighthouseapp.com/projects/#{project}/tickets?q=all")
-end
-
-Given(/^The number of open tickets is X$/) do
-  @tickets = getopentickets(page)
-  print "Open tickets: #{@tickets}\n"
-end
-
 When(/^I press "(.*?)"$/) do |button_name|
   click_button button_name
 end
 
 When(/^I click "(.*?)"$/) do |link_name|
   click_link link_name
+end
+
+When(/^I click "(.*?)" from the tickets list$/) do |link_name|
+  click_list(page, link_name)
 end
 
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field_name, value|
@@ -53,15 +46,6 @@ end
 
 Then(/^the ticket should be in the list of open tickets$/) do
   @ticketid = page.first('.ticketnum').text.delete('#')
-  getopenticketslink(page).click
+  click_list(page, "Open tickets")
   assert page.has_selector?("#ticket-#{@ticketid}")
-end
-
-Then(/^the number of open tickets should be X\+1$/) do
-  print "Waiting for Lighthouse to update ticket counts...\n"
-  sleep(10)
-  getopenticketslink(page).click
-  t = getopentickets(page)
-  print "Current: #{t} expected: #{@tickets+1}\n"
-  assert t == @tickets+1
 end
