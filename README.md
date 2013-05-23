@@ -100,6 +100,9 @@ Log in: This test checks whether the user can log in. This is done as a separate
 test to show that the log in form will bring the user to a page that gives a
 success message. Note that the form may send the user to different pages
 (dashboard, overview) but it will always have the success message.
+Reason: All the tests have being logged in as given, but logging in should
+be tested on it's own aswell.
 
 Add tag: This test checks whether a tag can be added to a ticket. It checks
 whether this tag is in the tag list on the right after updating.
+Reason: Adding tags to tickets makes them easier to find.

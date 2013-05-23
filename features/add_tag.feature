@@ -1,7 +1,7 @@
 Feature: Add tag to ticket
 	As an authorised user
 	I want to add a tag to a ticket
-	So i can find it easier later
+	So it will be easier to find later
 	@selenium
 	Scenario:
 		Given I am logged in

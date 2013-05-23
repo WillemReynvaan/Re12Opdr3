@@ -2,7 +2,7 @@ Feature: Create Milestone
 	As an authorized user
 	I want to be able to create milestones
 	And I want to be able to add milestones to tickets
-	So that the milestones are tacked
+	So that the milestones are tracked
 	@selenium
 	Scenario:
 		Given I am logged in

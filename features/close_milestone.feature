@@ -2,6 +2,7 @@ Feature: Close Milestone
 	As an authorized user
 	I want to be able to close milestones
 	Even when that milestone contains open tickets
+	So i can close milestones quickly
 	@selenium
 	Scenario:
 		Given I am logged in
