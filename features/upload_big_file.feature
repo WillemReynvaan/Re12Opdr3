@@ -1,7 +1,6 @@
-Feature: Add profile picture
+Feature: Upload big file
 	As an authorised user
-	I want to change my profile picture
-	So people know what I look like
+	I want to upload a big data file
 	@selenium
 	Scenario:
 		Given I am logged in
