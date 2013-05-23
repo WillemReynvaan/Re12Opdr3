@@ -15,7 +15,7 @@ Given(/^there is a milestone with open tickets$/) do
   if list.nil? or list.all('.num').none? { |elm| elm.text.delete(',').to_i > 0 } then
     # Skip test, it should be possible to do it after the create ticket and 
     # create milestone scenario
-    print "Please run the 'create_ticket.feature' and 'create_milestone.feature scenario, \nthen try again.\n"
+    print "Please run the 'create_ticket.feature' and 'create_milestone.feature' scenarios, \nthen try again.\n"
     pending
   end
 end

@@ -2,11 +2,11 @@ Given(/^I am at the login page$/) do
   visit('http://re12.lighthouseapp.com/login')
 end
 
-When(/^I fill in "(.*?)"$/) do |arg1|
+When(/^I fill in my e-mail address$/) do |arg1|
   fill_in "email", :with => "hreynvaa@liacs.nl"
 end
 
-When(/^I fill in my "(.*?)"$/) do |arg1|
+When(/^I fill in my password$/) do |arg1|
   fill_in "password", :with => "testlogin"
 end
 
