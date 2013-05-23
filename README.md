@@ -11,7 +11,7 @@ University of Leiden.
 
 Most of the project structure is only there to let Ruby think that it is
 a Rails application, so that it is possible to start a server to interact
-with Selenium.
+with Selenium. The test scenarios can be found in `features/`.
 
 Installation and running
 ------------------------
@@ -43,7 +43,9 @@ open tickets, otherwise it will be pending.
 Upload profile picture: This test checks whether a profile picture can be uploaded.
 It uploads a JPG file and a PNG file, and in between checks whether the file name
 has changed to include ".jpg" or ".png". This is the best way to check whether the
-image actually changed.
+image actually changed, because the file name is always "image" plus the extension
+and the rest of the URL can randomly change on every page. It is too difficult to
+check that the image is the one we uploaded, also because it is resized.
 
 Create milestone: This test checks whether it is possible to create a new milestone
 and then add that exact milestone to an issue. Both the name and milestone ID are
@@ -57,3 +59,8 @@ a milestone with open tickets, otherwise it will be pending.
 Restore temporary comment: This test checks whether the comment that was typed for a
 new ticket is restored when the page is reloaded. This simulates a crashed browser.
 The test explicitly waits after typing and reloading to allow saving and restoring.
+
+Export CSV: This test checks whether the CSV export of the ticket list is valid CSV.
+We set up a special profile which makes sure that CSV files are automatically downloaded
+to the correct directory, so that the test can wait while it is downloading without any
+manual intevention.
