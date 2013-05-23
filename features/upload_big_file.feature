@@ -9,4 +9,4 @@ Feature: Upload big file
 		And I click on the top ticket
 		And I upload "target.dat" in "ticket_attachment"
 		And I press "Update ticket"
-		Then i should see a link named "target.dat"
+		Then I should see a link named "target.dat"
