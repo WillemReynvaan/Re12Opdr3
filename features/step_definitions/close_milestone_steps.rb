@@ -13,9 +13,9 @@ Given(/^there is a milestone with open tickets$/) do
   click_link "Milestones"
   list = page.find('.milestone-list')
   if list.nil? or list.all('.num').none? { |elm| elm.text.delete(',').to_i > 0 } then
-    # Skip test, it should be possible to do it after the create ticket and 
-    # create milestone scenario
-    print "Please run the 'create_ticket.feature' and 'create_milestone.feature scenario, \nthen try again.\n"
+    # Skip test, it should be possible to do it after the 'add a new ticket'
+    # and 'create milestone' scenarios
+    print "Please run the 'add_a_new_ticket.feature' and 'create_milestone.feature' \nscenarios, then try again.\n"
     pending
   end
 end

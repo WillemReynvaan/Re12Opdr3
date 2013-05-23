@@ -4,7 +4,7 @@ Feature: Log in
 	@selenium
 	Scenario:
 		Given I am at the login page
-		When I fill in "my e-mail address"
-		And I fill in my "password"
+		When I fill in my e-mail address
+		And I fill in my password
 		And I press on "Sign In"
 		Then I should see "Signed in successfully"

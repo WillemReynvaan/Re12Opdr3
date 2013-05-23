@@ -11,7 +11,7 @@ After do
 end
 
 def getnumberoftickets(page)
-  elm = page.find('#search-sentence').first('b')
+  elm = page.find('#search-sentence').find('b:last-child')
   if elm.nil?
     return 0
   else
@@ -22,8 +22,9 @@ end
 Given(/^The number of "(.*?)" is greater than (\d+)$/) do |query, min|
   click_menu(page, query)
   if getnumberoftickets(page) <= min.to_i then
-    # Skip test, it should be possible to do it after the create ticket scenario
-    print "Please run the 'create_ticket.feature' scenario, then try again.\n"
+    # Skip test, it should be possible to do it after the 'add a new ticket'
+    # scenario
+    print "Please run the 'add_a_new_ticket.feature' scenario, then try again.\n"
     pending
   end
 end

@@ -5,7 +5,7 @@ Feature: Add tag to ticket
 	@selenium
 	Scenario:
 		Given I am logged in
-		And there are more than 0 tickets tagged as "newtag"
+		And The number of "All tickets" is greater than 0
 		When I click "Open tickets" in the tickets menu
 		And I click on the top ticket
 		And I fill in "newtag" in the tag list

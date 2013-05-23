@@ -1,10 +1,15 @@
+# This file sets up some often used step definitions and configuration for
+# the Cucumber tests.
+
 require 'capybara/cucumber'
 require 'capybara/session'
 
 Capybara.default_driver = :selenium
 
 Before do
-  @ticketid = 0
+  @url = 'http://re12.lighthouseapp.com/'
+  @email = "hreynvaa@liacs.nl"
+  @password = "testlogin"
 end
 
 After do
@@ -18,9 +23,9 @@ def click_menu(page, link_name)
 end
 
 Given(/^I am logged in$/) do
-  visit('http://re12.lighthouseapp.com/')
-  fill_in "email", :with => "hreynvaa@liacs.nl"
-  fill_in "password", :with => "testlogin"
+  visit(@url)
+  fill_in "email", :with => @email
+  fill_in "password", :with => @password
   click_button "Sign In"
 end
 
@@ -38,14 +43,4 @@ end
 
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field_name, value|
   fill_in field_name, :with => value
-end
-
-Then(/^the ticket should be shown with a title "(.*?)"$/) do |content|
-  assert page.title.include?(content)
-end
-
-Then(/^the ticket should be in the list of open tickets$/) do
-  @ticketid = page.first('.ticketnum').text.delete('#')
-  click_menu(page, "Open tickets")
-  assert page.has_selector?("#ticket-#{@ticketid}")
 end
