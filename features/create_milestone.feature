@@ -18,5 +18,4 @@ Feature: Create Milestone
 		And I click on the top ticket
 		And I change the "Milestone" to the new milestone
 		And I press "Update ticket"
-		Then the ticket should be shown with a title "Test"
-		And the ticket should have the new milestone
+		Then the ticket should have the new milestone
