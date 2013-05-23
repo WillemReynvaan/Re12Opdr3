@@ -11,7 +11,7 @@ After do
 end
 
 def getnumberoftickets(page)
-  elm = page.find('#search-sentence').first('b')
+  elm = page.find('#search-sentence').find('b:last-child')
   if elm.nil?
     return 0
   else

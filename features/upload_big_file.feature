@@ -4,7 +4,7 @@ Feature: Upload big file
 	@selenium
 	Scenario:
 		Given I am logged in
-		And The number of "Open tickets" is greater than 0
+		And The number of "All tickets" is greater than 0
 		When I click "Open tickets" in the tickets menu
 		And I click on the top ticket
 		And I upload "target.dat" in "ticket_attachment"
