@@ -23,10 +23,10 @@ with fairly new versions of Firefox as the Selenium driver.
 
 The required gems should be retrievable using `bundle install`.
 
-To run the Cucumber tests, two terminals are needed, both with the root directory
-of the project as the current directory. One of them has to start the server using
-`rails s`. When the server has started, use `bundle exec cucumber` in the other
-terminal to run all the scenarios.
+To run the Cucumber tests, two terminals are needed, both with the root
+directory of the project as the current directory. One of them has to start the
+server using `rails s`. When the server has started, use `bundle exec cucumber`
+in the other terminal to run all the scenarios.
 
 Scenario descriptions
 ---------------------
@@ -37,8 +37,7 @@ page and it should appear on the list of open tickets.
 
 Resolve ticket: This test checks whether it is possible to change the status of
 an open ticket to resolved. It should receive this state on the ticket page and
-it should appear on the list of closed tickets. This test only works if there are
-open tickets, otherwise it will be pending.
+it should appear on the list of closed tickets. This test only works if there are open tickets, otherwise it will be pending.
 
 Upload profile picture: This test checks whether a profile picture can be
 uploaded. It uploads a JPG file and a PNG file, and in between checks whether
@@ -71,3 +70,7 @@ Upload big file: This test checks whether it is possible to upload a file that
 is larger than 50 MB. Lighthouse does not support such big files, and the
 connection is reset when this is done (instead of showing an error message).
 Therefore, this is a failing test.
+
+Log in: This test checks whether the user can log in.
+
+Add tag: This test checks whether a tag can be added to a ticket.
