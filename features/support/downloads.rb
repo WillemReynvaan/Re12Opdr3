@@ -1,5 +1,5 @@
 # Code from http://collectiveidea.com/blog/archives/2012/01/27/testing-file-downloads-with-capybara-and-chromedriver/
-
+# encoding: UTF-8
 module DownloadHelpers
   TIMEOUT = 10
   PATH    = File.expand_path("tmp/downloads")
@@ -16,7 +16,7 @@ module DownloadHelpers
 
   def download_content
     wait_for_download
-    File.read(download)
+    File.read(download).force_encoding("utf-16").encode("utf-8", replace:nil )
   end
 
   def wait_for_download
