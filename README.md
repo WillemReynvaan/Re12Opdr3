@@ -40,26 +40,15 @@ create some of them manually.
 Feature scenario descriptions
 -----------------------------
 
-<<<<<<< HEAD
-Create ticket: This test checks whether it is possible to create a new ticket,
-which should bring the user to a page that has the title of the ticket on the
-page and it should appear in the list of open tickets.
+Add a new ticket: This test checks whether it is possible to create a new
+ticket, which should bring the user to a page that has the title of the ticket
+on the page and it should appear on the list of open tickets.
 Reason: Creating tickets is a vital function for lighthouse.
 
 Resolve ticket: This test checks whether it is possible to change the status of
 an open ticket to resolved. It should receive this state on the ticket page and
-it should appear on the list of closed tickets. This test only works if there are
-open tickets, otherwise it will be pending.
-Reason: Closing tickets is a vital function for lighthouse.
-=======
-Add a new ticket: This test checks whether it is possible to create a new
-ticket, which should bring the user to a page that has the title of the ticket
-on the page and it should appear on the list of open tickets.
-
-Resolve ticket: This test checks whether it is possible to change the status of
-an open ticket to resolved. It should receive this state on the ticket page and
 it should appear on the list of closed tickets. This test only works if there are open tickets, otherwise it will be pending.
->>>>>>> 6434391dc06fa964ca60a7da2382d1a9ff4e7d8a
+Reason: Closing tickets is a vital function for lighthouse.
 
 Change profile picture: This test checks whether a profile picture can be
 uploaded. It uploads a JPG file and a PNG file, and in between checks whether
