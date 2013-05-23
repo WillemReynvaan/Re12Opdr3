@@ -1,4 +1,4 @@
-Feature: Create Ticket
+Feature: Add a New Ticket
 	As an authorized user
 	I want to be able to add tickets to projects
 	So that the issue is tracked

@@ -1,4 +1,4 @@
-Feature: Create Milestone
+Feature: Add Milestone
 	As an authorized user
 	I want to be able to create milestones
 	And I want to be able to add milestones to tickets
