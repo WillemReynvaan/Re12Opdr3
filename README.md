@@ -47,7 +47,8 @@ Reason: Creating tickets is a vital function for lighthouse.
 
 Resolve ticket: This test checks whether it is possible to change the status of
 an open ticket to resolved. It should receive this state on the ticket page and
-it should appear on the list of closed tickets. This test only works if there are open tickets, otherwise it will be pending.
+it should appear on the list of closed tickets. This test only works if there 
+are open tickets, otherwise it will be pending.
 Reason: Closing tickets is a vital function for lighthouse.
 
 Change profile picture: This test checks whether a profile picture can be
@@ -57,8 +58,8 @@ check whether the image actually changed, because the file name is always
 "image" plus the extension and the rest of the URL can randomly change on every
 page. It is too difficult to check that the image is the one we uploaded, also
 because it is resized.
-Reason: A profile picture with every comment can give a nice overview of a
-conversation.
+Reason: A profile picture with every comment can give a nice overview of 
+a conversation, and lighthouse should support normal image types.
 
 Add milestone: This test checks whether it is possible to create a new
 milestone and then add that exact milestone to an issue. Both the name and
@@ -70,29 +71,30 @@ lighthouse.
 Close milestone: This test checks whether it is possible to close a milestone,
 even if there are open tickets with that milestone. This test only works if
 there is such a milestone with open tickets, otherwise it will be pending.
-Reason: Being able to close a milestone is needed.
+Reason: Being able to close a milestone is a vital function for lighthouse, and 
+the tickets in it should not affect this. Closing ensures that new tickets will 
+not use this milestone later.
 
 Restore temporary comment: This test checks whether the comment that was typed
 for a new ticket is restored when the page is reloaded. This simulates
 a crashed browser. The test explicitly waits after typing and reloading to
 allow autosaving and restoring.
-Reason: A good autosave function can prevent a lot of frustration.
+Reason: A good autosave function can prevent a lot of frustration, such as when 
+accidentally clicking on another link or crashing the browser.
 
 Export CSV: This test checks whether the CSV export of the ticket list is valid
 CSV. We set up a special profile which makes sure that CSV files are
 automatically downloaded to the correct directory, so that the test can wait
 while it is downloading without any manual intervention.
-Reason: If it's possible to export as a csv, it should be at least readable
-as a csv file.
+Reason: If it's possible to export as a CSV, it should be at least readable
+as a CSV file.
 
 Upload big file: This test checks whether it is possible to upload a file that
 is larger than 50 MB. Lighthouse does not support such big files, and the
 connection is reset when this is done (instead of showing an error message).
 Therefore, this is a failing test.
-<<<<<<< HEAD
-Reason: The site adds a notification near the upload file button, saying that the
-maximum upload can be 50 MB.
-=======
+Reason: The site adds a notification near the upload file button, saying that 
+the maximum upload can be 50 MB, but does not hanlde such an upload correctly.
 
 Log in: This test checks whether the user can log in. This is done as a separate
 test to show that the log in form will bring the user to a page that gives a
@@ -101,4 +103,3 @@ success message. Note that the form may send the user to different pages
 
 Add tag: This test checks whether a tag can be added to a ticket. It checks
 whether this tag is in the tag list on the right after updating.
->>>>>>> 6434391dc06fa964ca60a7da2382d1a9ff4e7d8a
