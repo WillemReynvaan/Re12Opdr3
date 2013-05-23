@@ -10,4 +10,4 @@ Feature: Add tag to ticket
 		And I click on the top ticket
 		And I fill in "newtag" in the tag list
 		And I press "Update ticket"
-		Then i should see a tag named "newtag"
+		Then I should see a tag named "newtag"

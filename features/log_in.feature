@@ -1,6 +1,6 @@
 Feature: Log in
-  I want to log in
-  So i can access the site
+	I want to log in
+	So I can access the site
 	@selenium
 	Scenario:
 		Given I am at the login page
